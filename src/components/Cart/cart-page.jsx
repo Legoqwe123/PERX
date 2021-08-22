@@ -9,17 +9,19 @@ export const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 
   return (
-    <section className="shop-cart container-95">
+    <section className="cart container-95">
       <ButtonBack />
 
-      <h2 className="shop-cart__title">Содержание заказа</h2>
+      <h2 className="cart__title">Содержание заказа</h2>
 
       {cart.length > 0 ? (
         <>
           <CartList />
           <CartInfo />
         </>
-      ) : null}
+      ) : (
+        <p>Корзина пуста</p>
+      )}
     </section>
   );
 };

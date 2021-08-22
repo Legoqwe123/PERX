@@ -5,7 +5,7 @@ export const CartList = () => {
   const cart = useSelector((state) => state.cart);
 
   return (
-    <ul className="shop-cart__list">
+    <ul className="cart__list">
       {cart.map((product) => (
         <CartItem product={product} key={product.name} />
       ))}

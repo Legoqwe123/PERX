@@ -10,22 +10,22 @@ export const Amount = ({
   handleChange,
 }) => {
   return (
-    <div className={`shop-product__amount ${className}`}>
+    <div className={`amount ${className}`}>
       <button
         type="button"
         onClick={handleClickRemove}
-        className="shop-product__amount-button">
+        className="amount-button">
         <img
           src={iconMinus}
           width="20"
           height="20"
           alt="Plus"
-          className="shop-product__amount-image"
+          className="amount-image"
         />
       </button>
       <input
         type="text"
-        className="shop-product__amount-value"
+        className="amount-value"
         disabled={disabled}
         value={value}
         maxLength={3}
@@ -33,16 +33,13 @@ export const Amount = ({
           handleChange(e.target.value);
         }}
       />
-      <button
-        type="button"
-        onClick={handleClickAdd}
-        className="shop-product__amount-button">
+      <button type="button" onClick={handleClickAdd} className="amount-button">
         <img
           src={iconPlus}
           width="20"
           height="20"
           alt="Minus"
-          className="shop-product__amount-image"
+          className="amount-image"
         />
       </button>
     </div>

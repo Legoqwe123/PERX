@@ -22,13 +22,13 @@ export const CartInfo = () => {
   };
 
   return (
-    <div className="shop-cart__info">
-      <p className="shop-cart__info-price">
+    <div className="cart__info">
+      <p className="cart__info-price">
         К оплате :<span>{totalSum.toFixed(2)}$</span>
       </p>
       <button
         type="button"
-        className="shop-cart__info-button"
+        className="cart__info-button"
         onClick={handleSumbit}>
         Оформить заказ
       </button>

@@ -20,16 +20,16 @@ export const ProductItem = ({ product }) => {
   };
 
   return (
-    <li className="shop-product__item">
+    <li className="product__item">
       <img
         src={createUrlForStatic(product.image)}
         alt={product.name}
-        className="shop-product__item-img"
+        className="product__item-img"
         width="200"
         height="200"
       />
-      <p className="shop-product__item-name">{product.name}</p>
-      <p className="shop-product__item-price">{product.price} $</p>
+      <p className="product__item-name">{product.name}</p>
+      <p className="product__item-price">{product.price} $</p>
 
       {productInCart ? (
         <Amount
@@ -40,7 +40,7 @@ export const ProductItem = ({ product }) => {
         />
       ) : (
         <button
-          className="shop-product__item-button"
+          className="product__item-button"
           type="button"
           onClick={handleClickButtonAdd}>
           Добавить в корзину

@@ -1,0 +1,35 @@
+.product
+    margin: 0 auto
+    padding: 20px 0
+    &__amount
+        display: flex
+        justify-content: space-evenly
+        &-value
+            width: 70px
+            height: 40px
+            text-align: center
+            border: 2px solid $primary-color
+            border-radius: 10px
+            @include title(18px)
+            margin: 0
+    &__list
+        display: flex
+        justify-content: flex-start
+        flex-wrap: wrap
+        gap: 15px
+    &__item
+        border: 1px solid $primary-color
+        border-radius: 5px
+        padding: 20px
+        &-name
+            @include title(18px)
+            &-price
+                @include title(16px, $warning-color)
+        &-button
+            @include text(16px)
+            border: 1px solid $primary-color
+            padding: 10px
+            border-radius: 10px
+            &:hover
+                background: $primary-color
+                color: $light-color

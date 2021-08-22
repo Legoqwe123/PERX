@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 export const ButtonBack = ({ className }) => {
   const history = useHistory();
 
-  const classNames = ["shop-cart__button-back", className];
+  const classNames = ["button-back", className];
 
   return (
     <button

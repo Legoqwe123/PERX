@@ -27,18 +27,18 @@ export const CartItem = ({ product }) => {
   };
 
   return (
-    <li className="shop-cart__list-item">
-      <div className="shop-cart__item-left">
+    <li className="cart__list-item">
+      <div className="cart__item-left">
         <img
           src={createUrlForStatic(product.image)}
           alt={product.name}
-          className="shop-cart__item-img"
+          className="cart__item-img"
           width="75"
           height="75"
         />
-        <p className="shop-cart__item-name"> {product.name}</p>
+        <p className="cart__item-name"> {product.name}</p>
       </div>
-      <div className="shop-cart__item-right">
+      <div className="cart__item-right">
         <Amount
           className="h-50"
           value={product.counter}
@@ -46,11 +46,11 @@ export const CartItem = ({ product }) => {
           handleClickRemove={handleClickButtonRemove}
           handleChange={handleChange}
         />
-        <p className="shop-cart__item-price">{product.price} $</p>
+        <p className="cart__item-price">{product.price} $</p>
 
         <div>
           <ButtonClose
-            className="shop-cart__item-button-close"
+            className="cart__item-button-close"
             handleClick={handleClickButtonClose}
           />
         </div>
