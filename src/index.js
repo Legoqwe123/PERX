@@ -1,4 +1,4 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
@@ -9,9 +9,9 @@ import "./assests/style/style.sass";
 function startApp(dealers) {
   ReactDOM.render(
     <DealersContext.Provider value={dealers}>
-      <React.StrictMode>
+      <StrictMode>
         <App />
-      </React.StrictMode>
+      </StrictMode>
     </DealersContext.Provider>,
     document.getElementById("root")
   );
