@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { DealersContext } from "./context/dealers-context";
 
-import "./assests/style/index.sass";
+import "./assests/style/style.sass";
 
 function startApp(dealers) {
   ReactDOM.render(

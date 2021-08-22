@@ -1,10 +1,14 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+   },
   "[javascript]": {
     "editor.formatOnSave": true
-  },
+   },
   "[sass]": {
-    "editor.defaultFormatter": "sasa.vscode-sass-format",
+    "editor.defaultFormatter": "syler.sass-indented",
     "editor.formatOnSave": true
-  }
+  },
+  "prettier.jsxBracketSameLine": true
 }
