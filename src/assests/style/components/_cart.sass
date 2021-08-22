@@ -15,6 +15,8 @@
             @include text(25px)
             padding: 15px
             border-radius: 10px
+            @media screen and ( max-width: 460px  )
+                width: 100%
             &:hover
                 background: $primary-color
                 color: $light-color
@@ -24,21 +26,43 @@
             @include flex-ai-center
             justify-content: space-between
             padding: 15px 0
+            @media screen and ( max-width: 460px  )
+                flex-direction: column
+                align-items: flex-start
             &:not(:last-child)
                 border-bottom: 2px solid $grey-color
     &__item
+        &-img
+            @media screen and ( max-width: 560px  )
+                width: 50px
+                height: 50px
         &-right
             max-width: 100%
             @include flex-ai-center
+            @media screen and ( max-width: 460px  )
+                width: 100%
+                justify-content: space-around
+                margin-top: 15px
+            .amount-value
+                @media screen and ( max-width: 560px  )
+                    width: 50px
+                    justify-content: center
         &-left
             @include flex-ai-center
+            @media screen and ( max-width: 460px  )
+                width: 100%
+                justify-content: center
         &-price
             @include title(18px, $warning-color)
             margin: 0 50px
             width: 70px
             text-align: end
+            @media screen and ( max-width: 560px  )
+                margin: 0 20px
         &-name
             @include title(16px)
             margin-left: 10px
+            @media screen and ( max-width: 560px  )
+                margin: 0 20px
     &__info
         @include text(18px, $info-color)

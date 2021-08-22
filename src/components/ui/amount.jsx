@@ -28,6 +28,7 @@ export const Amount = ({
         className="amount-value"
         disabled={disabled}
         value={value}
+        min={1}
         maxLength={3}
         onChange={(e) => {
           handleChange(e.target.value);
