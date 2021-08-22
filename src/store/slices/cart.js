@@ -19,6 +19,7 @@ export const cartSlice = createSlice({
 
       state.push({ ...action.payload, counter: 1 });
     },
+
     removeProduct(state, action) {
       const productIndexInCart = state.findIndex(
         (itemCart) => itemCart.name === action.payload.name
@@ -35,6 +36,22 @@ export const cartSlice = createSlice({
 
     setCart(_, action) {
       return action.payload;
+    },
+
+    updateProduct(state, action) {
+      const productIndexInCart = state.findIndex(
+        (itemCart) => itemCart.name === action.payload.name
+      );
+
+      state[productIndexInCart] = action.payload;
+    },
+
+    removeProductFully(state, action) {
+      return state.filter((product) => product.name !== action.payload.name);
+    },
+
+    clearAll() {
+      return [];
     },
   },
 });

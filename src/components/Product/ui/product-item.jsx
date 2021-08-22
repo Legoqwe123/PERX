@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { createUrlForStatic } from "../../../constants/api";
@@ -37,6 +36,7 @@ export const ProductItem = ({ product }) => {
           value={productInCart.counter}
           handleClickAdd={handleClickButtonAdd}
           handleClickRemove={handleClickButtonRemove}
+          disabled
         />
       ) : (
         <button

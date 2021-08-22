@@ -1,11 +1,16 @@
-import React from "react";
-
 import iconPlus from "../../assests/icons/add.svg";
 import iconMinus from "../../assests/icons/minus.svg";
 
-export const Amount = ({ handleClickAdd, handleClickRemove, value }) => {
+export const Amount = ({
+  handleClickAdd,
+  handleClickRemove,
+  value,
+  className,
+  disabled,
+  handleChange,
+}) => {
   return (
-    <div className="shop-product__amount">
+    <div className={`shop-product__amount ${className}`}>
       <button
         type="button"
         onClick={handleClickRemove}
@@ -18,7 +23,16 @@ export const Amount = ({ handleClickAdd, handleClickRemove, value }) => {
           className="shop-product__amount-image"
         />
       </button>
-      <p className="shop-product__amount-value">{value}</p>
+      <input
+        type="text"
+        className="shop-product__amount-value"
+        disabled={disabled}
+        value={value}
+        maxLength={3}
+        onChange={(e) => {
+          handleChange(e.target.value);
+        }}
+      />
       <button
         type="button"
         onClick={handleClickAdd}

@@ -18,7 +18,7 @@ export const ProductPage = () => {
   }, []);
 
   return (
-    <section className="shop">
+    <section className="shop container-95">
       {!isEmpty(productData.products) && isEmpty(productData.error) && (
         <ProductList products={productData.products} />
       )}
