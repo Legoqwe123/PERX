@@ -1,26 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
-import './assests/style/index.sass'
+import App from "./App";
+import { DealersContext } from "./context/dealers-context";
 
-
-
+import "./assests/style/index.sass";
 
 function startApp(dealers) {
-
-  console.log(dealers);
-
   ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+    <DealersContext.Provider value={dealers}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </DealersContext.Provider>,
+    document.getElementById("root")
   );
 }
 
-
 window.app = {
-  startApp
-}
-
+  startApp,
+};
