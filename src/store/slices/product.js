@@ -34,7 +34,7 @@ export const fetchProduct = (dealers) => async (dispatch) => {
 
   const fetchUrl = isEmpty(dealers)
     ? createUrlAPI("/goods")
-    : createUrlAPI(["/goods", `?=${dealers.join(",")}`]);
+    : createUrlAPI(["/goods", `/?dealers=${dealers.join(",")}`]);
 
   try {
     const response = await fetch(fetchUrl);
