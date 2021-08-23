@@ -1,6 +1,7 @@
+import { withLoading } from "../../../HOC/with-loading";
 import { ProductItem } from "./product-item";
 
-export const ProductList = ({ products }) => {
+export const ProductList = withLoading(({ products }) => {
   return (
     <ul className="product__list">
       {products.map((product) => (
@@ -8,4 +9,4 @@ export const ProductList = ({ products }) => {
       ))}
     </ul>
   );
-};
+}, "product.loading");

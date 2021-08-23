@@ -15,7 +15,7 @@ export const CartInfo = () => {
 
   const handleSumbit = () => {
     setTimeout(() => {
-      dispatch(actions.clearAll());
+      dispatch(actions.clearAllCart());
 
       history.push(routes.product);
     }, 500);

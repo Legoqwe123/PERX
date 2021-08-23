@@ -1,4 +1,3 @@
-import isEmpty from "lodash/isEmpty";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -22,9 +21,7 @@ export const ProductPage = () => {
 
   return (
     <section className="product container-95">
-      {!isEmpty(productData.products) && isEmpty(productData.error) && (
-        <ProductList products={productData.products} />
-      )}
+      <ProductList products={productData.products} />
     </section>
   );
 };

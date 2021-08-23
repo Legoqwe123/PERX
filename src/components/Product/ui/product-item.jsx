@@ -12,11 +12,11 @@ export const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleClickButtonAdd = () => {
-    dispatch(actions.addProduct(product));
+    dispatch(actions.addItem(product));
   };
 
   const handleClickButtonRemove = () => {
-    dispatch(actions.removeProduct(product));
+    dispatch(actions.removeItem(product));
   };
 
   return (

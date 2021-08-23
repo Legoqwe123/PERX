@@ -9,20 +9,20 @@ export const CartItem = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleClickButtonAdd = () => {
-    dispatch(actions.addProduct(product));
+    dispatch(actions.addItem(product));
   };
 
   const handleClickButtonRemove = () => {
-    dispatch(actions.removeProduct(product));
+    dispatch(actions.removeItem(product));
   };
 
   const handleClickButtonClose = () => {
-    dispatch(actions.removeProductFully(product));
+    dispatch(actions.removeItemFully(product));
   };
 
   const handleChange = (value) => {
     if (value < 1000) {
-      dispatch(actions.updateProduct({ ...product, counter: +value }));
+      dispatch(actions.updateItem({ ...product, counter: +value }));
     }
   };
 

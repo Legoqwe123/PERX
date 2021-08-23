@@ -45,6 +45,7 @@ function App() {
 
   useLayoutEffect(() => {
     setCartOutLocalStorageAtInizializationApp();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
