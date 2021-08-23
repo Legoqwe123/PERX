@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { findIndexItemByName, deleteItemByName } from "../../utils/utils";
+
 const initialCartValues = [];
 
 export const cartSlice = createSlice({
@@ -7,9 +9,7 @@ export const cartSlice = createSlice({
   initialState: initialCartValues,
   reducers: {
     addItem(state, action) {
-      const productIndexInCart = state.findIndex(
-        (itemCart) => itemCart.name === action.payload.name
-      );
+      const productIndexInCart = findIndexItemByName(state, action.payload);
 
       if (productIndexInCart >= 0) {
         state[productIndexInCart].counter++;
@@ -21,14 +21,10 @@ export const cartSlice = createSlice({
     },
 
     removeItem(state, action) {
-      const productIndexInCart = state.findIndex(
-        (itemCart) => itemCart.name === action.payload.name
-      );
+      const productIndexInCart = findIndexItemByName(state, action.payload);
 
-      const shouldRemoveProduct = state[productIndexInCart].counter <= 1;
-
-      if (shouldRemoveProduct) {
-        return state.filter((product) => product.name !== action.payload.name);
+      if (state[productIndexInCart].counter <= 1) {
+        return deleteItemByName(state, action.payload);
       }
 
       state[productIndexInCart].counter--;
@@ -39,15 +35,13 @@ export const cartSlice = createSlice({
     },
 
     updateItem(state, action) {
-      const productIndexInCart = state.findIndex(
-        (itemCart) => itemCart.name === action.payload.name
-      );
+      const productIndexInCart = findIndexItemByName(state, action.payload);
 
       state[productIndexInCart] = action.payload;
     },
 
     removeItemFully(state, action) {
-      return state.filter((product) => product.name !== action.payload.name);
+      return deleteItemByName(state, action.payload);
     },
 
     clearAllCart() {
