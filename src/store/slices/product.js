@@ -22,7 +22,7 @@ export const productSlice = createSlice({
     },
     fetchProductFailure(state, action) {
       state.error = action.payload;
-      state.error = false;
+      state.loading = false;
     },
   },
 });
